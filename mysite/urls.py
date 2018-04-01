@@ -16,7 +16,13 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+from django.conf import settings
+from django.conf.urls.static import static
+
+#여기서 url패턴을 찾아보고, 매칭된다면 view제공
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('blog.urls')),
 ]
+
+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

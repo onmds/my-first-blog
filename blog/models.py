@@ -16,4 +16,9 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class UploadFileModel(models.Model):
+    title = models.TextField(default='')
+    file = models.FileField(null=True)
+    
 # Create your models here.
